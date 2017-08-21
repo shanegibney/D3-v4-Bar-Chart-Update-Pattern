@@ -1,0 +1,98 @@
+[{
+    "info": "Race1",
+    "raceplace": 1,
+    "name": "RT",
+    "club": "NM",
+    "clocktime": "21:33",
+    "category": "M40",
+    "handicap": "02:30",
+    "racetime": "19:03",
+    "timeplace": 44,
+    "points": 10,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 2,
+    "name": "KM",
+    "club": "GM",
+    "clocktime": "12:13",
+    "category": "M50",
+    "handicap": "00:45",
+    "racetime": "21:28",
+    "timeplace": 91,
+    "points": 8,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 3,
+    "name": "SD",
+    "club": "G",
+    "clocktime": "02:15",
+    "category": "M50",
+    "handicap": "01:45",
+    "racetime": "20:30",
+    "timeplace": 75,
+    "points": 8,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 4,
+    "name": "DK",
+    "club": "GM",
+    "clocktime": "08:20",
+    "category": "M40",
+    "handicap": "02:45",
+    "racetime": "19:35",
+    "timeplace": 53,
+    "points": 8,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 5,
+    "name": "BD",
+    "club": "P",
+    "clocktime": "12:21",
+    "category": "M40",
+    "handicap": "02:15",
+    "racetime": "20:06",
+    "timeplace": 65,
+    "points": 8,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 6,
+    "name": "KC",
+    "club": "S",
+    "clocktime": "03:21",
+    "category": "M50",
+    "handicap": "02:00",
+    "racetime": "20:21",
+    "timeplace": 70,
+    "points": 8,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 7,
+    "name": "PM",
+    "club": "P",
+    "clocktime": "22:22",
+    "category": "M50",
+    "handicap": "00:45",
+    "racetime": "21:37",
+    "timeplace": 95,
+    "points": 7,
+    "FIELD10": "More Analysis"
+  },
+  {
+    "raceplace": 8,
+    "name": "NR",
+    "club": "TSC",
+    "clocktime": "18:23",
+    "category": "M40",
+    "handicap": "01:45",
+    "racetime": "20:38",
+    "timeplace": 79,
+    "points": 7,
+    "FIELD10": "More Analysis"
+  }
+]
