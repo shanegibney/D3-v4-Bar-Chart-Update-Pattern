@@ -85,13 +85,7 @@
         data = newdata;
 
         data.forEach(function(d) {
-          d.racetime = parseTime(d.racetime);
-          d.handicap = parseTime(d.handicap);
           d.clocktime = parseTime(d.clocktime);
-          d.place = +d.place;
-          d.points = +d.points;
-          d.raceplace = +d.raceplace;
-          d.timeplace = +d.timeplace;
         })
         update();
       });
@@ -102,15 +96,9 @@
         if (error) throw error;
         data = newdata;
         data.forEach(function(d) {
-          d.racetime = parseTime(d.racetime);
-          d.handicap = parseTime(d.handicap);
           d.clocktime = parseTime(d.clocktime);
-          d.place = +d.place;
-          d.points = +d.points;
-          d.raceplace = +d.raceplace;
-          d.timeplace = +d.timeplace;
         })
-        update(data);
+        update();
       });
     }
 
@@ -163,40 +151,38 @@
       // EXIT old elements not present in new data
       newRects0.exit()
         .transition(t)
-        .attr("y", height)
-        .attr("height", 0)
+        .attr("y", height) // old elements which are leaving the chart, their y position transitions to the xaxis
+        .attr("height", 0) // old elements which are leaving the chart, therir height trasnitions to 0
         .remove();
 
       // UPDATE old elements present in new data
       newRects0.transition(t)
         .attr("x", function(d) {
           return x(d.name);
-        })
+        }) // old elememnts in new data transition to their new position
         .attr("y", function(d) {
           return y(d.clocktime)
-        })
+        }) // old elememnts in new data transition to their y position
         .attr("height", function(d, i) {
           return height - y(d.clocktime)
-        });
+        }); // old elememnts in new data transition to their correct height
 
       // ENTER new elements present in new data
+      // EXIT and UPDATE above will not apply first time render as there is no change to the data.
       newRects0.enter()
         .append('rect')
         .attr("x", function(d) {
           return x(d.name);
         })
-        .attr("y", height)
-        .attr("height", 0)
+        .attr("y", height) // bars start on xaxis or position y=height
+        .attr("height", 0) // bars start with zero height
         .transition(t)
-        // .attr("x", function(d) {
-        //   return x(d.name);
-        // })
         .attr("y", function(d, i) {
           return y(d.clocktime);
-        })
+        }) // after the transition bars goes to its correct y position
         .attr("height", function(d, i) {
           return height - y(d.clocktime)
-        })
+        }) // after transition bar grows to its full height
         .attr("width", x.bandwidth())
         .style('fill', 'gray')
         .attr("class", function(d, i) {
