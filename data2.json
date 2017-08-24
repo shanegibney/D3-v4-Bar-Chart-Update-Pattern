@@ -1,122 +1,17 @@
 [{
-    "info": "Race 2",
-    "raceplace": 1,
-    "name": "SL",
-    "club": "MM",
-    "clocktime": "13:08",
-    "category": "M40",
-    "handicap": "00:30",
-    "racetime": "22:38",
-    "timeplace": 69,
-    "points": 10,
-    "FIELD10": "More Analysis"
+    "name": "A",
+    "value": 3
   },
   {
-    "raceplace": 2,
-    "name": "VB",
-    "club": "T",
-    "clocktime": "03:01",
-    "category": "M40",
-    "handicap": "00:00",
-    "racetime": "23:01",
-    "timeplace": 80,
-    "points": 8,
-    "FIELD10": "More Analysis"
+    "name": "B",
+    "value": 7
   },
   {
-    "raceplace": 3,
-    "name": "JC",
-    "club": "D",
-    "clocktime": "04:12",
-    "category": "M",
-    "handicap": "02:30",
-    "racetime": "20:42",
-    "timeplace": 36,
-    "points": 8,
-    "FIELD10": "More Analysis"
+    "name": "C",
+    "value": 3
   },
   {
-    "raceplace": 4,
-    "name": "SD",
-    "club": "P",
-    "clocktime": "10:31",
-    "category": "M50",
-    "handicap": "00:00",
-    "racetime": "23:31",
-    "timeplace": 85,
-    "points": 8,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 5,
-    "name": "YM",
-    "club": "D",
-    "clocktime": "18:37",
-    "category": "M50",
-    "handicap": "00:00",
-    "racetime": "24:37",
-    "timeplace": 113,
-    "points": 8,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 6,
-    "name": "MMcG",
-    "club": "GM",
-    "clocktime": "06:41",
-    "category": "M50",
-    "handicap": "00:00",
-    "racetime": "23:41",
-    "timeplace": 89,
-    "points": 8,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 7,
-    "name": "DK",
-    "club": "P",
-    "clocktime": "13:44",
-    "category": "M60",
-    "handicap": "00:00",
-    "racetime": "24:44",
-    "timeplace": 115,
-    "points": 7,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 8,
-    "name": "BF",
-    "club": "ND",
-    "clocktime": "03:48",
-    "category": "M50",
-    "handicap": "00:00",
-    "racetime": "24:48",
-    "timeplace": 117,
-    "points": 7,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 9,
-    "name": "PF",
-    "club": "MM",
-    "clocktime": "17:54",
-    "category": "M50",
-    "handicap": "02:45",
-    "racetime": "21:09",
-    "timeplace": 44,
-    "points": 7,
-    "FIELD10": "More Analysis"
-  },
-  {
-    "raceplace": 10,
-    "name": "RG",
-    "club": "GM",
-    "clocktime": "18:54",
-    "category": "M50",
-    "handicap": "02:45",
-    "racetime": "21:09",
-    "timeplace": 45,
-    "points": 7,
-    "FIELD10": "More Analysis"
+    "name": "D",
+    "value": 6
   }
 ]
