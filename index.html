@@ -16,6 +16,14 @@
   .enter {
     fill: green;
   }
+
+  #json {
+    max-height: 400px;
+    width: 200px;
+    overflow: scroll;
+    border: 2px solid gray;
+    border-radius: 15px;
+  }
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -30,8 +38,8 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Data</a>
       <div class="dropdown-menu">
-        <a class="dropdown-item" id="defaultInput" value="one" href="#">data1.json</a>
-        <a class="dropdown-item" id="updateInput" value="two" href="#">data2.json</a>
+        <a class="dropdown-item" onclick="updateFunction('1')" href="# ">data1.json</a>
+        <a class="dropdown-item" onclick="updateFunction('2')" href="#">data2.json</a>
       </div>
     </li>
     <li class="nav-item">
@@ -43,9 +51,11 @@
   </ul>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-md-12">
-        <div id="race_graph">
-        </div>
+
+      <div class="col-md-8" id="race_graph">
+      </div>
+      <div id="json">
+        <!-- <pre class="col-md-4" id="json">hello</pre> -->
       </div>
     </div>
   </div>
@@ -59,7 +69,7 @@
         bottom: 100,
         left: 80
       },
-      width = 1400 - margin.left - margin.right,
+      width = 1000 - margin.left - margin.right,
       height = 600 - margin.top - margin.bottom;
 
     // set the domains and ranges
@@ -75,7 +85,6 @@
 
     var yAxis = d3.axisLeft(y)
       .ticks(8);
-    // .tickFormat(d3.timeFormat("%M:%S"));
 
     // Add main graph svg
     var svg = d3.select("#race_graph")
@@ -87,27 +96,21 @@
     var g0 = svg.append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+    var index = 1;
+    updateFunction(index);
 
-    function defaultFunction() {
-      d3.json("data1.json", function(error, newdata) {
+    function updateFunction(index) {
+      d3.json("data" + index + ".json", function(error, newdata) {
         if (error) throw error;
         data = newdata;
 
         data.forEach(function(d) {
           d.value = +d.value;
         })
-        update();
-      });
-    }
 
-    function updateFunction() {
-      d3.json("data2.json", function(error, newdata) {
-        if (error) throw error;
-        data = newdata;
+        // To display json in html page
+        document.getElementById("json").innerHTML = "<pre>" + JSON.stringify(data, null, 4) + "</pre>";
 
-        data.forEach(function(d) {
-          d.value = +d.value;
-        })
         update();
       });
     }
@@ -122,7 +125,7 @@
       // set domain temporal y-scale
       y.domain([0, d3.max(data, function(d) {
         return d.value;
-      })]);
+      })]).nice();
 
       // Add the X Axis
       svg.select(".x.axis").call(xAxis);
@@ -167,15 +170,9 @@
       // UPDATE old elements present in new data
       newRects0.attr("class", function(d) {
           return "update bar";
-        }) // fill red
-        // .append("text")
-        // .attr("x", 510)
-        // .attr("y", 40)
-        // .attr("dy", "0.32em")
-        // .style("font-weight", "bold")
-        // .text("clock time: ")
+        })
         .transition(d3.transition()
-          .delay(750))
+          .delay(1000))
         .duration(750)
         .attr("x", function(d) {
           return x(d.name);
@@ -201,7 +198,7 @@
         }) // bars start with zero height
         .attr("width", x.bandwidth())
         .transition(d3.transition()
-          .delay(1500))
+          .delay(2000))
         .duration(750)
         .attr("y", function(d, i) {
           return y(d.value);
@@ -210,12 +207,6 @@
           return height - y(d.value)
         }); // after transition bar grows to its full height
 
-    }; //closes update() function
-
-    document.getElementById("defaultInput")
-      .onclick = defaultFunction;
-    document.getElementById("updateInput")
-      .onclick = updateFunction;
-    defaultFunction();
+    }; // end of update() function
   </script>
 </body>
