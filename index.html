@@ -148,7 +148,7 @@
       // JOIN new data with old elements
       var newRects0 = g0.selectAll(".bar")
         .data(data, function(d) {
-          return d;
+          return d.name;
         });
 
       // EXIT old elements not present in new data
